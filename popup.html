@@ -13,6 +13,16 @@
     <div class="container glassmorphism">
       <div class="title-container">
         <h1 class="title">Site<span class="accent">Notes</span></h1>
+        <button id="newNoteButton" class="new-note-button" title="Neue Notiz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+        </button>
       </div>
 
       <div class="search-container">
@@ -35,62 +45,19 @@
         <div id="searchResults" class="search-results"></div>
       </div>
 
-      <div class="notes-management">
-        <div class="select-wrapper">
-          <select id="notesList" class="glassmorphism-light">
-            <option value="new">+ Neue Notiz</option>
-          </select>
-          <span class="shortcut-hint">Ctrl+N</span>
-        </div>
-        <div class="notes-actions">
-          <button
-            id="deleteNote"
-            class="icon-button neon-hover"
-            title="Notiz löschen"
-            data-shortcut="Ctrl+⌫"
-          >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-              />
-            </svg>
-          </button>
-          <button
-            id="renameNote"
-            class="icon-button neon-hover"
-            title="Notiz umbenennen"
-            data-shortcut="Ctrl+R"
-          >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-              />
-            </svg>
-          </button>
-        </div>
+      <div class="note-editor">
+        <input
+          type="text"
+          id="noteTitle"
+          class="note-title-input glassmorphism-light"
+          placeholder="Titel der Notiz..."
+        />
+        <textarea
+          id="noteText"
+          class="note-content-input glassmorphism-light"
+          placeholder="Ihre Notizen für diese Seite..."
+        ></textarea>
       </div>
-
-      <textarea
-        id="noteText"
-        class="glassmorphism-light"
-        placeholder="Ihre Notizen für diese Seite..."
-      ></textarea>
 
       <div class="button-container">
         <button id="saveButton" class="save-button">
@@ -101,6 +68,37 @@
       </div>
 
       <div id="status" class="status-message">✓ Gespeichert!</div>
+
+      <div class="notes-list">
+        <h2 class="notes-list-title">Gespeicherte Notizen</h2>
+        <div id="existingNotes" class="existing-notes">
+          <!-- Wird dynamisch befüllt -->
+        </div>
+      </div>
+
+      <!-- Bestätigungs-Modal -->
+      <div id="confirmModal" class="modal">
+        <div class="modal-content glassmorphism">
+          <h3>Notiz löschen</h3>
+          <p>Möchten Sie diese Notiz wirklich löschen?</p>
+          <div class="modal-actions">
+            <button id="cancelDelete" class="modal-button cancel">
+              Abbrechen
+            </button>
+            <button id="confirmDelete" class="modal-button confirm">
+              Löschen
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>
+          &copy; 2024 SiteNotes. Alle Rechte vorbehalten.<br />
+          More Info:
+          <a href="https://www.site-notes.com">SiteNotes.com</a>
+        </p>
+      </footer>
     </div>
     <script src="popup.js"></script>
   </body>

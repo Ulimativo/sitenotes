@@ -7,9 +7,6 @@
     "storage",
     "activeTab"
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "web_accessible_resources": [{
     "resources": ["styles.css", "tailwind.css"],
     "matches": ["<all_urls>"]
