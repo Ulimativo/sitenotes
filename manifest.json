@@ -7,6 +7,9 @@
     "storage",
     "activeTab"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "web_accessible_resources": [{
     "resources": ["styles.css", "tailwind.css"],
     "matches": ["<all_urls>"]
@@ -23,5 +26,14 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "SiteNotes öffnen"
+    }
   }
 } 
