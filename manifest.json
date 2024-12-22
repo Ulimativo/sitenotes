@@ -8,7 +8,7 @@
     "activeTab"
   ],
   "web_accessible_resources": [{
-    "resources": ["styles.css"],
+    "resources": ["styles.css", "tailwind.css"],
     "matches": ["<all_urls>"]
   }],
   "action": {
