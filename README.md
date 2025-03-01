@@ -1,4 +1,4 @@
-![SiteNotes Logo](icons/logo.png)
+![SiteNotes Logo](chrome-extension/icons/logo.png)
 
 # SiteNotes
 
